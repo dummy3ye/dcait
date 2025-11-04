@@ -1,39 +1,110 @@
-<!DOCTYPE html>
-<title>DCAIT</title>
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width", initial-scale="1.0">
-    <title>DCAIT</title>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>DCAIT — Dhaka Collegiate Association of Information and Technology</title>
     <link rel="stylesheet" href="styles/home.css">
-</head>
+    <meta name="description" content="Dhaka Collegiate Association of Information and Technology — empowering the next generation through code, creativity and collaboration">
+  </head>
 
-<body>
-  <header>
-    <h2>DCAIT</h1>
-    <nav>
-      <a href="home.html">Home</a>
-      <a href="about.html">About Us</a>
-      <a href="programs.html">Programs</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </header>
-  <main>
-    <section class="intro">
-      <h2>Welcome to DCAIT</h2>
-      <p>Your gateway to cutting-edge education in computer applications and information technology.</p>
-    </section>
-    <section class="highlights">
-      <h2>Highlights</h2>
-      <ul>
-        <li>State-of-the-art laboratories</li>
-        <li>Experienced faculty members</li>
-        <li>Industry collaborations and internships</li>
-        <li>Comprehensive curriculum</li>
-      </ul>
-    </section>
-  </main>
-  <footer>
-    <p>&copy; 2024 Department of Computer Applications and Information Technology. All rights reserved.</p>
-  </footer>
+  <body>
+    <div class="site-wrap">
+      <header class="site-header" role="banner">
+        <div class="brand">
+          <a href="home.html" class="logo" aria-label="DCAIT home">
+            <!-- inline SVG logo -->
+            <svg width="44" height="44" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true">
+              <circle cx="50" cy="50" r="48" fill="#0b6cff" />
+              <text x="50" y="60" text-anchor="middle" font-family="Poppins, sans-serif" font-size="46" fill="#fff" font-weight="600">D</text>
+            </svg>
+          </a>
+          <span class="site-title">DCAIT</span>
+        </div>
+
+        <nav class="site-nav" role="navigation" aria-label="Main navigation">
+          <a href="home.html">Home</a>
+          <a href="about.html">About Us</a>
+          <a href="programs.html">Programs</a>
+          <a href="events.html">Events</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+      </header>
+
+      <main>
+        <section class="hero slide-in" aria-labelledby="hero-title" role="region">
+          <div class="hero-inner">
+            <div class="hero-content">
+              <h1 id="hero-title" class="hero-title">Dhaka Collegiate Association of Information and Technology</h1>
+              <p class="hero-sub">Empowering the next generation of innovators through code, creativity, and collaboration.</p>
+
+              <div class="hero-cta">
+                <a class="btn primary" href="about.html">Learn More</a>
+                <a class="btn ghost" href="events.html">Upcoming Events</a>
+              </div>
+            </div>
+
+            <!-- visible half-circle visual (inline SVG) -->
+            <div class="hero-visual" aria-hidden="true">
+              <!-- SVG is intentionally large; CSS will position it so only the left part is visible -->
+              <svg viewBox="0 0 1200 1200" preserveAspectRatio="xMidYMid slice" role="img" focusable="false">
+                <defs>
+                  <linearGradient id="g1" x1="0" x2="1" y1="0" y2="1">
+                    <stop offset="0%" stop-color="#0b6cff" stop-opacity="0.18" />
+                    <stop offset="100%" stop-color="#0b6cff" stop-opacity="0.04" />
+                  </linearGradient>
+                </defs>
+                <!-- big circle -->
+                <circle cx="600" cy="600" r="560" fill="url(#g1)" />
+                <!-- decorative shapes to look like a collage/tech pattern -->
+                <g fill="#0b6cff" fill-opacity="0.12">
+                  <rect x="220" y="420" width="320" height="220" rx="18" />
+                  <circle cx="420" cy="300" r="60" />
+                  <rect x="560" y="720" width="180" height="120" rx="12" />
+                </g>
+                <!-- faint grid lines -->
+                <g stroke="#0b6cff" stroke-opacity="0.06" stroke-width="4">
+                  <path d="M120 200 L1100 200" />
+                  <path d="M120 800 L1100 800" />
+                </g>
+              </svg>
+            </div>
+          </div>
+        </section>
+
+        <section class="highlights slide-in" aria-labelledby="highlights-title">
+          <h2 id="highlights-title">Highlights</h2>
+          <ul>
+            <li>State-of-the-art laboratories</li>
+            <li>Experienced faculty members</li>
+            <li>Industry collaborations and internships</li>
+            <li>Comprehensive curriculum</li>
+          </ul>
+        </section>
+
+        <section class="events slide-in" aria-labelledby="events-title">
+          <h2 id="events-title">Events</h2>
+          <p>Workshops, hackathons and speaker sessions organised by DCAIT — coming soon.</p>
+        </section>
+      </main>
+
+      <footer class="site-footer" role="contentinfo">
+        <p>&copy; 2024 Dhaka Collegiate Association of Information and Technology. All rights reserved.</p>
+      </footer>
+    </div>
+
+    <script>
+      // smooth reveal using IntersectionObserver
+      (function () {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) e.target.classList.add('in-view');
+          });
+        }, { threshold: 0.14 });
+
+        document.querySelectorAll('.slide-in').forEach((el) => observer.observe(el));
+      })();
+    </script>
+  </body>
+</html>
